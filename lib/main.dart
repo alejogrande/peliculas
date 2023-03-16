@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:peliculas/data/constans.dart';
 import 'package:peliculas/data/routes/routes.dart';
 
 void main() {
@@ -11,12 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // LocalDatabase.viewCourts();
-    // DBSqlLite().createDatabase();
     return MaterialApp(
-      title: 'Agendamientos',
+      title: 'peliculas',
       debugShowCheckedModeBanner: false,
       routes: appRoutes,
+      initialRoute: Routes.home,
     );
   }
 }
