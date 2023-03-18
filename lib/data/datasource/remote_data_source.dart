@@ -1,6 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'package:peliculas/data/constans.dart';
 import 'package:peliculas/data/exception.dart';
+import 'package:peliculas/data/models/details_model.dart';
 import 'package:peliculas/data/models/genres_model.dart';
 import 'package:peliculas/data/models/movies_model.dart';
 
@@ -11,6 +12,8 @@ abstract class RemoteDataSource {
       {required String page, required String genres});
 
   Future<Movies> getMoviesSearch({required String page, required String query});
+
+  Future<Details> getMovieDetails({required String idMovie});
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -61,6 +64,18 @@ class RemoteDataSourceImpl implements RemoteDataSource {
 
     if (response.statusCode == 200) {
       return moviesFromJson((response.body));
+    } else {
+      throw ServerException();
+    }
+  }
+
+  @override
+  Future<Details> getMovieDetails({required String idMovie}) async {
+    final response = await http.get(Uri.parse(
+        '${Urls.baseUrl}/movie/$idMovie?api_key=${Urls.apiKey}&language=es-ES'));
+
+    if (response.statusCode == 200) {
+      return detailsFromJson((response.body));
     } else {
       throw ServerException();
     }

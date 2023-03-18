@@ -19,54 +19,62 @@ class GridViewMovies extends StatelessWidget {
         children: items!
             .map((e) => Padding(
                   padding: const EdgeInsets.all(20),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(2),
-                    child: Stack(
-                      fit: StackFit.expand,
-                      children: [
-                        Column(
-                          children: [
-                            Expanded(
-                              child: e!.posterPath != null
-                                  ? Container(
-                                      width: double.infinity,
-                                      // height: 100,
-                                      // height: double.maxFinite,
-                                      decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                        image: NetworkImage(
-                                            Urls.movieImage(e!.posterPath!)),
-                                        fit: BoxFit.cover,
-                                      )),
-                                    )
-                                  : Container(),
-                            ),
-                            SizedBox(
-                              height: 50,
-                              child: Column(
-                                children: [
-                                  Text(
-                                    e.title!,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Starts(e.voteAverage!),
-                                      Text(
-                                        e.voteAverage!.toString(),
-                                        style: TextStyle(
-                                            color: Colors.yellow[700]),
-                                      ),
-                                    ],
-                                  )
-                                ],
+                  child: GestureDetector(
+                    onTap: () {
+                      context
+                          .read<DetailBloc>()
+                          .add(LoadDetails(e.id!.toString()));
+                      Navigator.pushNamed(context, Routes.detail);
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(2),
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: [
+                          Column(
+                            children: [
+                              Expanded(
+                                child: e!.posterPath != null
+                                    ? Container(
+                                        width: double.infinity,
+                                        // height: 100,
+                                        // height: double.maxFinite,
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                          image: NetworkImage(
+                                              Urls.movieImage(e!.posterPath!)),
+                                          fit: BoxFit.cover,
+                                        )),
+                                      )
+                                    : Container(),
                               ),
-                            )
-                          ],
-                        )
-                      ],
+                              SizedBox(
+                                height: 50,
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      e.title!,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Starts(e.voteAverage!),
+                                        Text(
+                                          e.voteAverage!.toString(),
+                                          style: TextStyle(
+                                              color: Colors.yellow[700]),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ))

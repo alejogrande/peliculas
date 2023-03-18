@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:peliculas/data/constans.dart';
 import 'package:peliculas/data/models/genres_model.dart';
 import 'package:peliculas/data/models/movies_model.dart';
+import 'package:peliculas/features/detail/bloc/detail_bloc.dart';
 
 import 'package:peliculas/features/home/bloc/home_bloc/home_bloc.dart';
 import 'package:peliculas/features/home/bloc/movies_genres_bloc/movies_genres_bloc.dart';
