@@ -1,9 +1,11 @@
 import 'package:http/http.dart' as http;
 import 'package:peliculas/data/exception.dart';
+import 'package:peliculas/data/models/genres_model.dart';
 import 'package:peliculas/data/models/movies_model.dart';
 
 abstract class RemoteDataSource {
   Future<Movies> getDiscover();
+  Future<Genres> getGenres();
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -22,12 +24,12 @@ class RemoteDataSourceImpl implements RemoteDataSource {
     }
   }
 
-  Future<Movies> getGenders() async {
+  Future<Genres> getGenres() async {
     final response = await client.get(Uri.parse(
         'https://api.themoviedb.org/3/genre/movie/list?api_key=d203d786addf2668c1a40424e7d8ae1a&language=es-ES'));
 
     if (response.statusCode == 200) {
-      return moviesFromJson((response.body));
+      return genresFromJson((response.body));
     } else {
       throw ServerException();
     }

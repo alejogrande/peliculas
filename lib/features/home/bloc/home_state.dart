@@ -13,5 +13,6 @@ class HomeEmpty extends HomeState {}
 
 class HomeHasData extends HomeState {
   Movies? data;
-  HomeHasData(this.data);
+  Genres? genres;
+  HomeHasData({this.data, this.genres});
 }
