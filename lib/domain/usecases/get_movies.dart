@@ -21,4 +21,9 @@ class GetMovies {
       {required String page, required String genres}) {
     return repository.getMoviesGenres(page: page, genres: genres);
   }
+
+  Future<Either<Failure, Movies>> getMoviesSearch(
+      {required String page, required String query}) {
+    return repository.getMoviesSearch(page: page, query: query);
+  }
 }

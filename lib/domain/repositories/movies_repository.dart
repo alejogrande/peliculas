@@ -8,4 +8,6 @@ abstract class MoviesRepository {
   Future<Either<Failure, Genres>> getGenres();
   Future<Either<Failure, Movies>> getMoviesGenres(
       {required String page, required String genres});
+  Future<Either<Failure, Movies>> getMoviesSearch(
+      {required String page, required String query});
 }

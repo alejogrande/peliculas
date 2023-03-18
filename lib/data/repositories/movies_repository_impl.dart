@@ -50,4 +50,17 @@ class MoviesRepositoryImpl implements MoviesRepository {
       return const Left(ConnectionFailure('Failed to connect to the network'));
     }
   }
+
+  Future<Either<Failure, Movies>> getMoviesSearch(
+      {required String page, required String query}) async {
+    try {
+      final result =
+          await remoteDataSource.getMoviesSearch(page: page, query: query);
+      return Right(result);
+    } on ServerException {
+      return const Left(ServerFailure(''));
+    } on SocketException {
+      return const Left(ConnectionFailure('Failed to connect to the network'));
+    }
+  }
 }
