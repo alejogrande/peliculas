@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Routes {
   static const String home = 'home';
   static const String detail = 'detail';
@@ -14,6 +16,9 @@ class Urls {
       'https://image.tmdb.org/t/p/w500${imageCode}';
 }
 
-class Assets {}
+class Assets {
+  static const String iconStart = 'lib/resources/icons/star.svg';
+  static const String iconStartEmpty = 'lib/resources/icons/star_off.svg';
+}
 
 class Const {}

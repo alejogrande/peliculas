@@ -30,7 +30,7 @@ class CarouselSliderCustom extends StatelessWidget {
                 ))
             .toList(),
         options: CarouselOptions(
-          // autoPlay: true,
+          autoPlay: true,
           enableInfiniteScroll: false,
         ));
   }

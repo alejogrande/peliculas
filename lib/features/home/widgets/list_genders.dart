@@ -1,25 +1,41 @@
 part of '../home_screen.dart';
 
-class ListGenres extends StatelessWidget {
+class ListGenres extends StatefulWidget {
   final List<Genre?> list;
-  const ListGenres({
-    required this.list,
-    super.key,
-  });
+
+  ListGenres({required this.list, super.key, this.selected});
+  String? selected;
 
   @override
+  State<ListGenres> createState() => _ListGenresState();
+}
+
+class _ListGenresState extends State<ListGenres> {
+  @override
   Widget build(BuildContext context) {
+    if (widget.selected == null) {
+      widget.selected = widget.list.first!.id!.toString();
+      context.read<MoviesGenresBloc>().add(LoadMoviesGenres(widget.selected!));
+    }
+    // return Scaffold(
     return SizedBox(
       height: 60,
       child: ListView(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        children: list!
+        children: widget.list
             .map((e) => Padding(
                   padding: const EdgeInsets.only(
-                      top: 5.0, bottom: 5.0, left: 22, right: 5),
+                      top: 10, bottom: 10, left: 22, right: 5),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        widget.selected = e.id!.toString();
+                        context
+                            .read<MoviesGenresBloc>()
+                            .add(LoadMoviesGenres(e.id!.toString()));
+                      });
+                    },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
@@ -27,9 +43,10 @@ class ListGenres extends StatelessWidget {
                         ),
                       ),
 
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.blue),
-                      fixedSize: MaterialStateProperty.all<Size>(Size(150, 50)),
+                      backgroundColor: e!.id!.toString() == widget.selected
+                          ? MaterialStateProperty.all<Color>(Colors.blue)
+                          : MaterialStateProperty.all<Color>(AppColors.black3),
+                      fixedSize: MaterialStateProperty.all<Size>(Size(140, 30)),
 
                       // O bien, puedes utilizar minimumSize
                       // minimumSize: MaterialStateProperty.all<Size>(Size(200, 50)),

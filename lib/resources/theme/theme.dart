@@ -56,8 +56,8 @@ ThemeData theme(BuildContext context) {
         fontWeight: FontWeight.normal,
       ),
       bodyMedium: GoogleFonts.poppins(
-        color: AppColors.fontTitle,
-        fontSize: 14,
+        color: Colors.white,
+        fontSize: 17,
         fontWeight: FontWeight.normal,
       ),
       titleMedium: GoogleFonts.poppins(

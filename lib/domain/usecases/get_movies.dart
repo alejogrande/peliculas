@@ -16,4 +16,9 @@ class GetMovies {
   Future<Either<Failure, Genres>> getGeders() {
     return repository.getGenres();
   }
+
+  Future<Either<Failure, Movies>> getMoviesGenres(
+      {required String page, required String genres}) {
+    return repository.getMoviesGenres(page: page, genres: genres);
+  }
 }

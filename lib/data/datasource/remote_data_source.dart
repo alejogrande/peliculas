@@ -6,6 +6,8 @@ import 'package:peliculas/data/models/movies_model.dart';
 abstract class RemoteDataSource {
   Future<Movies> getDiscover();
   Future<Genres> getGenres();
+  Future<Movies> getMoviesGenres(
+      {required String page, required String genres});
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -30,6 +32,19 @@ class RemoteDataSourceImpl implements RemoteDataSource {
 
     if (response.statusCode == 200) {
       return genresFromJson((response.body));
+    } else {
+      throw ServerException();
+    }
+  }
+
+  @override
+  Future<Movies> getMoviesGenres(
+      {required String page, required String genres}) async {
+    final response = await client.get(Uri.parse(
+        'https://api.themoviedb.org/3/discover/movie?api_key=d203d786addf2668c1a40424e7d8ae1a&language=es-ES&sort_by=popularity.desc&page=$page&with_genres=$genres'));
+
+    if (response.statusCode == 200) {
+      return moviesFromJson((response.body));
     } else {
       throw ServerException();
     }
