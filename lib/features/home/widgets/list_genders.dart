@@ -29,12 +29,14 @@ class _ListGenresState extends State<ListGenres> {
                       top: 10, bottom: 10, left: 22, right: 5),
                   child: ElevatedButton(
                     onPressed: () {
-                      setState(() {
-                        widget.selected = e.id!.toString();
-                        context
-                            .read<MoviesGenresBloc>()
-                            .add(LoadMoviesGenres(e.id!.toString()));
-                      });
+                      if (widget.selected != e.id!.toString()) {
+                        setState(() {
+                          widget.selected = e.id!.toString();
+                          context
+                              .read<MoviesGenresBloc>()
+                              .add(LoadMoviesGenres(e.id!.toString()));
+                        });
+                      }
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -46,7 +48,8 @@ class _ListGenresState extends State<ListGenres> {
                       backgroundColor: e!.id!.toString() == widget.selected
                           ? MaterialStateProperty.all<Color>(Colors.blue)
                           : MaterialStateProperty.all<Color>(AppColors.black3),
-                      fixedSize: MaterialStateProperty.all<Size>(Size(140, 30)),
+                      fixedSize:
+                          MaterialStateProperty.all<Size>(const Size(140, 30)),
 
                       // O bien, puedes utilizar minimumSize
                       // minimumSize: MaterialStateProperty.all<Size>(Size(200, 50)),
