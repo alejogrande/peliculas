@@ -44,7 +44,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   Future<Movies> getMoviesGenres(
       {required String page, required String genres}) async {
     final response = await client.get(Uri.parse(
-        '${Urls.baseUrl}discover/movie?api_key=d203d786addf2668c1a40424e7d8ae1a&language=es-ES&sort_by=popularity.desc&page=$page&with_genres=$genres'));
+        '${Urls.baseUrl}/discover/movie?api_key=d203d786addf2668c1a40424e7d8ae1a&language=es-ES&sort_by=popularity.desc&page=$page&with_genres=$genres'));
 
     if (response.statusCode == 200) {
       return moviesFromJson((response.body));

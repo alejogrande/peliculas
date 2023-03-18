@@ -27,17 +27,19 @@ class GridViewMovies extends StatelessWidget {
                         Column(
                           children: [
                             Expanded(
-                              child: Container(
-                                width: double.infinity,
-                                // height: 100,
-                                // height: double.maxFinite,
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                  image: NetworkImage(
-                                      Urls.movieImage(e!.posterPath!)),
-                                  fit: BoxFit.cover,
-                                )),
-                              ),
+                              child: e!.posterPath != null
+                                  ? Container(
+                                      width: double.infinity,
+                                      // height: 100,
+                                      // height: double.maxFinite,
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                        image: NetworkImage(
+                                            Urls.movieImage(e!.posterPath!)),
+                                        fit: BoxFit.cover,
+                                      )),
+                                    )
+                                  : Container(),
                             ),
                             SizedBox(
                               height: 50,

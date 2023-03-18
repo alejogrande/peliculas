@@ -8,7 +8,7 @@ import 'package:peliculas/features/favorite/home_screen.dart';
 
 import 'package:peliculas/features/home/home_screen.dart';
 import 'package:peliculas/features/root/navigation_bloc/navigation_cubit.dart';
-import 'package:peliculas/features/serch/home_screen.dart';
+import 'package:peliculas/features/serch/search_screen.dart';
 import 'package:peliculas/resources/colors.dart';
 
 class RootScreen extends StatefulWidget {

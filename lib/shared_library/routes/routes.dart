@@ -4,7 +4,7 @@ import 'package:peliculas/features/detail/home_screen.dart';
 import 'package:peliculas/features/favorite/home_screen.dart';
 import 'package:peliculas/features/home/home_screen.dart';
 import 'package:peliculas/features/root/root_screen.dart';
-import 'package:peliculas/features/serch/home_screen.dart';
+import 'package:peliculas/features/serch/search_screen.dart';
 
 final Map<String, Widget Function(BuildContext)> appRoutes = {
   Routes.favorite: (_) => const FavoriteScreen(),

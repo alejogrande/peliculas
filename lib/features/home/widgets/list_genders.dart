@@ -54,7 +54,7 @@ class _ListGenresState extends State<ListGenres> {
                       // O bien, puedes utilizar minimumSize
                       // minimumSize: MaterialStateProperty.all<Size>(Size(200, 50)),
                     ),
-                    child: Text(e!.name!),
+                    child: Text(e.name!),
                   ),
                 ))
             .toList(),

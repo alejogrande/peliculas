@@ -1,13 +1,13 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
 class AppColors {
   static const Color primary = Color.fromARGB(255, 0, 0, 0);
-  static const Color secondary = Color(0xFF139CA8);
+  static const Color secondary = Colors.white;
 
   static const Color background = Color(0xFFF5F7FB);
   static const Color card = Color(0xFFFFFFFF);
   static const Color fontTitle = Color.fromARGB(255, 16, 36, 168);
-  static const Color fontSubtitle = Color(0xFF139CA8);
+  static const Color fontSubtitle = Colors.white;
   static const Color fontDisable = Color(0xFF9B9B9B);
   static const Color disabledButton = Color.fromARGB(255, 252, 216, 179);
   static const Color divider = Color(0xFFDCDCDC);
