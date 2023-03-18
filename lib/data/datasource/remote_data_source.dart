@@ -21,4 +21,15 @@ class RemoteDataSourceImpl implements RemoteDataSource {
       throw ServerException();
     }
   }
+
+  Future<Movies> getGenders() async {
+    final response = await client.get(Uri.parse(
+        'https://api.themoviedb.org/3/genre/movie/list?api_key=d203d786addf2668c1a40424e7d8ae1a&language=es-ES'));
+
+    if (response.statusCode == 200) {
+      return moviesFromJson((response.body));
+    } else {
+      throw ServerException();
+    }
+  }
 }

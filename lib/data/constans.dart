@@ -11,7 +11,7 @@ class Urls {
   static const String sesionId = '7d446ada90741ed7bf099412e1839b83a13ecd42';
 
   static String movieImage(String imageCode) =>
-      'https://image.tmdb.org/t/p/w500/${imageCode}';
+      'https://image.tmdb.org/t/p/w500${imageCode}';
 }
 
 class Assets {}

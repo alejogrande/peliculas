@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:peliculas/data/constans.dart';
 import 'package:peliculas/features/home/bloc/home_bloc.dart';
+import 'package:peliculas/resources/theme/theme.dart';
 import 'package:peliculas/shared_library/routes/routes.dart';
 import 'injection.dart' as di;
 
@@ -19,10 +20,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'peliculas',
+      title: 'Seeri-Movie',
       debugShowCheckedModeBanner: false,
       routes: appRoutes,
       initialRoute: Routes.home,
+      theme: theme(context),
     );
   }
 }
