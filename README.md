@@ -4,7 +4,8 @@ A new Flutter project.
 
 ## Getting Started
 
-![Ejemplo de Imagen](Screenshot_1679177397.png)
+![Ejemplo de Imagen]<img src="Screenshot_1679177403.png" alt="Ejemplo de Imagen" width="500"/>
+
 
 This project is a starting point for a Flutter application.
 
