@@ -1,10 +1,24 @@
-# peliculas
+# Nombre del proyecto
 
-A new Flutter project.
+Breve descripción del proyecto
+
+## Características
+
+- Gestor de estados BLoC
+- Dependencia Injection con `get_it`
+- Lectura de imágenes en formato SVG
+- Validación de errores con `Either` de `dartz`
+- Integración de Google Fonts
+
+## Instalación
+
+1. Clona este repositorio:
+
+
 
 ## Getting Started
 
-<img src="Screenshot_1679177403.png" alt="Ejemplo de Imagen" width="300"/> <img src="Screenshot_1679177416.png" alt="Ejemplo de Imagen" width="300"/> <img src="Screenshot_1679177397.png" alt="Ejemplo de Imagen" width="300"/>
+<img src="Screenshot_1679177403.png" alt="Ejemplo de Imagen" width="300"/>  <img src="Screenshot_1679177416.png" alt="Ejemplo de Imagen" width="300"/>  <img src="Screenshot_1679177397.png" alt="Ejemplo de Imagen" width="300"/>
 
 
 
