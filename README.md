@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-<img src="Screenshot_1679177403.png" alt="Ejemplo de Imagen" width="300"/><img src="Screenshot_1679177416.png" alt="Ejemplo de Imagen" width="300"/><img src="Screenshot_1679177397.png" alt="Ejemplo de Imagen" width="300"/>
+<img src="Screenshot_1679177403.png" alt="Ejemplo de Imagen" width="300"/> <img src="Screenshot_1679177416.png" alt="Ejemplo de Imagen" width="300"/> <img src="Screenshot_1679177397.png" alt="Ejemplo de Imagen" width="300"/>
 
 
 
