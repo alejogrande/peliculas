@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:peliculas/features/home/bloc/home_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -16,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    context.read<HomeBloc>().add(LoadHome());
     return Scaffold(
         appBar: AppBar(
           title: const Text("home"),
