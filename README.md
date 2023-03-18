@@ -4,7 +4,13 @@ A new Flutter project.
 
 ## Getting Started
 
-![Ejemplo de Imagen]<img src="Screenshot_1679177403.png" alt="Ejemplo de Imagen" width="500"/>
+![Ejemplo de Imagen]<img src="Screenshot_1679177403.png" alt="Ejemplo de Imagen" width="300"/>
+
+![Ejemplo de Imagen]<img src="Screenshot_1679177416.png" alt="Ejemplo de Imagen" width="300"/>
+
+![Ejemplo de Imagen]<img src="Screenshot_1679177397.png" alt="Ejemplo de Imagen" width="300"/>
+
+
 
 
 This project is a starting point for a Flutter application.
